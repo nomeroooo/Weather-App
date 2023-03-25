@@ -1,0 +1,82 @@
+@use 'sass:math';
+
+// $primary-color: #f8fafc;
+$primary-color: #f1f5f9;
+// $secondary-color: #e2f8f0;
+// $secondary-color: #9ca3af;
+$secondary-color: #7dd3fc;
+// $tertiary-color: #9ca3af;
+$tertiary-color: #38bdf8;
+$active-color: #fcc419;
+$primary-text-color: #000;
+$secondary-text-color: #222;
+$box-shadow: 3px 3px 3px rgba(22, 22, 22, 0.3);
+$box-shadow-hover: 2px 2px 2px rgba(22, 22, 22, 0.2);
+
+@function rem($pixel) {
+  @return math.div($pixel, 16) + rem;
+}
+
+@mixin media-lg {
+  @media screen and (max-width: 68.75em) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 55.75em) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media screen and (max-width: 37.5em) {
+    @content;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  min-height: calc(100vh - 2 * rem(40));
+  padding: 0 rem(24);
+}
+
+.container {
+  max-width: rem(1300);
+  min-height: rem(650);
+  margin: rem(40) auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.5fr;
+  grid-template-rows: 0.5fr 1.45fr 1.5fr;
+  margin: rem(40) auto;
+  // background-color: $secondary-color;
+  background: linear-gradient(to bottom, $primary-color, $secondary-color);
+  border-radius: 15px;
+  overflow: hidden;
+
+  @include media-lg {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto 0.5fr;
+  }
+
+  @include media-md {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,112 @@
+@use 'base' as b;
+
+.aside {
+  grid-row: 2 / -1;
+  grid-column: 3 / -1;
+  background-color: b.$primary-color;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  border: 1px solid b.$tertiary-color;
+  padding: b.rem(12);
+  display: flex;
+  flex-direction: column;
+  gap: b.rem(22);
+
+  @include b.media-lg {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+    margin-left: 1rem;
+  }
+
+  @include b.media-md {
+    grid-row: 5 / 6;
+    grid-column: 1 / -1;
+  }
+
+  &__heading {
+    font-size: b.rem(14);
+    font-weight: 500;
+    color: b.$primary-text-color;
+    flex-grow: 0;
+  }
+
+  &__entries {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: b.rem(8);
+
+    @include b.media-lg {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include b.media-md {
+      padding: b.rem(4) b.rem(4) b.rem(16) b.rem(4);
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      scrollbar-color: b.$secondary-color b.$active-color;
+
+      &::-webkit-scrollbar {
+        height: b.rem(4);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: b.$active-color;
+        border-radius: 100px;
+      }
+    }
+  }
+
+  &__entry {
+    background-color: b.$secondary-color;
+    padding: b.rem(12);
+    padding-bottom: b.rem(28);
+    color: b.$primary-text-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: b.$box-shadow;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    @include b.media-md {
+      flex-basis: calc(33% - b.rem(4));
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      box-shadow: b.$box-shadow-hover;
+      transform: translateY(-3px);
+      background-color: b.$active-color;
+    }
+
+    &--active {
+      background-color: b.$active-color;
+      box-shadow: b.$box-shadow-hover;
+    }
+  }
+
+  &__city {
+    font-size: b.rem(16);
+    font-weight: 500;
+  }
+
+  &__temp {
+    font-size: b.rem(14);
+    font-weight: 500;
+  }
+
+  &__description {
+    font-size: b.rem(10);
+    font-weight: 400;
+    color: b.$secondary-text-color;
+    position: absolute;
+    bottom: b.rem(14);
+    left: b.rem(12);
+  }
+}

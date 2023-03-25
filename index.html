@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This weather app gives you information about the current weather in your city. It also provides hourly forecast for the next 24 hours and daily forecast for the next 8 days."
+    />
+    <link rel="icon" href="src/img/01d.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/scss/main.scss" />
+
+    <script type="module" src="src/js/controller.js"></script>
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="header">
+        <div class="header__info">
+          <!-- <h1 class="header__place">Lipa City, Philippines</h1>
+          <p class="header__date">Saturday, Jan 18, 2023</p> -->
+        </div>
+        <div class="header__buttons">
+          <button
+            class="header__button header__button--active"
+            data-unit="Celsius"
+          >
+            <img src="src/img/celsius.svg" alt="celsius icon" />
+          </button>
+          <button class="header__button" data-unit="Fahrenheit">
+            <img src="src/img/fahrenheit.svg" alt="fahrenheit icon" />
+          </button>
+        </div>
+      </section>
+      <main class="main">
+        <form class="search">
+          <input
+            type="text"
+            class="search__field"
+            placeholder="Type name of your city"
+          />
+          <button class="btn search__btn">
+            <svg class="search__icon">
+              <use href="src/img/icons.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+        <div class="main__container">
+          <!-- <h2 class="main__heading">Today's Weather</h2>
+          <div class="main__img"></div>
+          <span class="main__temperature"
+            >20<sup>o<sub>C</sub></sup></span
+          >
+          <p class="main__description">Partly Cloudy</p>
+          <div class="main__details">
+            <div class="main__detail">
+              <img src="./src/img/sunrise.svg" alt="sunrise icon" />
+              <p>Sunrise</p>
+              <time datetime="5:45">5:45</time>
+            </div>
+            <div class="main__detail">
+              <img src="./src/img/sunset.svg" alt="sunset icon" />
+              <p>Sunset</p>
+              <time datetime="5:45">5:45</time>
+            </div>
+            <div class="main__detail">
+              <img src="./src/img/humidity.svg" alt="humidty icon" />
+              <p>Humidity</p>
+              <span>85%</span>
+            </div>
+            <div class="main__detail">
+              <img src="./src/img/uv-index.svg" alt="uv index icon" />
+              <p>UV Index</p>
+              <span>8</span>
+            </div>
+          </div> -->
+        </div>
+      </main>
+      <section class="hourly">
+        <h3 class="hourly__heading">Hourly Forecast</h3>
+        <div class="hourly__entries">
+          <!--<div class="hourly__entry">
+            <span class="time">12AM</span>
+            <div class="hourly__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+            <div class="hourly__info">
+              <img src="src/img/rain.svg" alt="rain icon" />
+              <span>80%</span>
+            </div>
+          </div>
+          <div class="hourly__entry">
+            <span class="time">12AM</span>
+            <div class="hourly__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+            <div class="hourly__info">
+              <img src="src/img/rain.svg" alt="rain icon" />
+              <span>80%</span>
+            </div>
+          </div>
+          <div class="hourly__entry">
+            <span class="time">12AM</span>
+            <div class="hourly__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+            <div class="hourly__info">
+              <img src="src/img/rain.svg" alt="rain icon" />
+              <span>80%</span>
+            </div>
+          </div>
+          <div class="hourly__entry">
+            <span class="time">12AM</span>
+            <div class="hourly__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+            <div class="hourly__info">
+              <img src="src/img/rain.svg" alt="rain icon" />
+              <span>80%</span>
+            </div>
+          </div>
+          <div class="hourly__entry">
+            <span class="time">12AM</span>
+            <div class="hourly__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+            <div class="hourly__info">
+              <img src="src/img/rain.svg" alt="rain icon" />
+              <span>80%</span>
+            </div>
+          </div>-->
+        </div>
+        <div class="pagination">
+          <!-- <button
+            class="pagination__button pagination__button--active"
+          ></button>
+          <button class="pagination__button"></button>
+          <button class="pagination__button"></button>
+          <button class="pagination__button"></button>
+          <button class="pagination__button"></button> -->
+        </div>
+      </section>
+      <section class="daily">
+        <h3 class="daily__heading">Daily Forecast</h3>
+        <div class="daily__entries">
+          <!--  <div class="daily__entry">
+            <span class="date">Mar 20</span>
+            <img src="src/img/partly-cloudy-day.svg" alt="partly cloudy icon" />
+            <div class="daily__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+          </div>
+          <div class="daily__entry">
+            <span class="date">Mar 20</span>
+            <img src="src/img/partly-cloudy-day.svg" alt="partly cloudy icon" />
+            <div class="daily__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+          </div>
+          <div class="daily__entry">
+            <span class="date">Mar 20</span>
+            <img src="src/img/partly-cloudy-day.svg" alt="partly cloudy icon" />
+            <div class="daily__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+          </div>
+          <div class="daily__entry">
+            <span class="date">Mar 20</span>
+            <img src="src/img/partly-cloudy-day.svg" alt="partly cloudy icon" />
+            <div class="daily__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+          </div>
+          <div class="daily__entry">
+            <span class="date">Mar 20</span>
+            <img src="src/img/partly-cloudy-day.svg" alt="partly cloudy icon" />
+            <div class="daily__info">
+              <img src="src/img/thermometer.svg" alt="thermometer" />
+              <span>24<sup>o</sup></span>
+            </div>
+          </div>-->
+        </div>
+        <div class="pagination">
+          <!-- <button
+            class="pagination__button pagination__button--active"
+          ></button>
+          <button class="pagination__button"></button> -->
+        </div>
+      </section>
+      <aside class="aside">
+        <h3 class="aside__heading">Other Cities</h3>
+        <div class="aside__entries">
+          <!--  <div class="aside__entry aside__entry--active">
+            <span class="aside__city">Manila</span>
+            <span class="aside__temp">24<sup>o</sup></span>
+            <span class="aside__description">Partly Cloudy</span>
+          </div>
+          <div class="aside__entry">
+            <span class="aside__city">Tokyo</span>
+            <span class="aside__temp">24<sup>o</sup></span>
+            <span class="aside__description">Partly Cloudy</span>
+          </div>
+          <div class="aside__entry">
+            <span class="aside__city">Seoul</span>
+            <span class="aside__temp">24<sup>o</sup></span>
+            <span class="aside__description">Partly Cloudy</span>
+          </div>
+          <div class="aside__entry">
+            <span class="aside__city">Los Angeles</span>
+            <span class="aside__temp">24<sup>o</sup></span>
+            <span class="aside__description">Partly Cloudy</span>
+          </div>
+          <div class="aside__entry">
+            <span class="aside__city">Paris</span>
+            <span class="aside__temp">24<sup>o</sup></span>
+            <span class="aside__description">Partly Cloudy</span>
+          </div>
+          <div class="aside__entry">
+            <span class="aside__city">London</span>
+            <span class="aside__temp">24<sup>o</sup></span>
+            <span class="aside__description">Partly Cloudy</span>
+          </div>-->
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

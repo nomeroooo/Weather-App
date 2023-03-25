@@ -1,0 +1,67 @@
+@use 'base' as b;
+
+.header {
+  grid-row: 1 / 2;
+  grid-column: 2 / -1;
+  background-color: b.$primary-color;
+  margin: b.rem(16);
+  padding: b.rem(12) b.rem(24);
+  border-radius: 15px;
+  border: 1px solid b.$tertiary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include b.media-md {
+    grid-column: 1 / -1;
+  }
+
+  &__place {
+    color: b.$primary-text-color;
+    font-size: b.rem(32);
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    @include b.media-md {
+      font-size: b.rem(26);
+    }
+  }
+
+  &__date {
+    color: b.$secondary-text-color;
+    font-size: b.rem(16);
+    font-weight: 500;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: b.rem(24);
+  }
+
+  &__button {
+    display: grid;
+    place-content: center;
+    border: none;
+    background-color: b.$secondary-color;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: b.$box-shadow;
+    transition: all 0.3s;
+
+    img {
+      width: b.rem(40);
+    }
+
+    &--active {
+      background-color: b.$active-color;
+      box-shadow: b.$box-shadow-hover;
+      transform: scale(1.05);
+    }
+
+    &:hover {
+      background-color: b.$active-color;
+      transform: scale(1.05);
+      box-shadow: b.$box-shadow-hover;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+export const API_KEY = '96002f8e89c7ec787a3b0503b606ae2a';
+export const TIMEOUT_SEC = 10;
+export const SEC_TO_MILLISEC = 1000;
+export const MANILA = { lat: 14.5948914, lon: 120.9782618 };
+export const SEOUL = { lat: 37.5666791, lon: 126.9782914 };
+export const BERLIN = { lat: 52.5170365, lon: 13.3888599 };
+export const BOSTON = { lat: 42.3554334, lon: -71.060511 };
+export const PARIS = { lat: 48.8588897, lon: 2.3200410217200766 };
+export const LONDON = { lat: 51.5073219, lon: -0.1276474 };

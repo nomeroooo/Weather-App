@@ -1,0 +1,37 @@
+@use 'base' as b;
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  svg {
+    animation: rotate 1.5s infinite linear;
+    fill: b.$active-color;
+
+    @include b.media-lg {
+      width: b.rem(70);
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  grid-column: 1 / -1;
+  p {
+    font-size: b.rem(14);
+    font-weight: 600;
+    line-height: 1.5;
+    color: b.$secondary-text-color;
+  }
+}
