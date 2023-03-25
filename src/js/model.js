@@ -51,7 +51,7 @@ export const getLocation = async function (info = initialCoords) {
   try {
     if (info === initialCoords) {
       const data = await getJSON(
-        `http://api.openweathermap.org/geo/1.0/reverse?lat=${info.lat}&lon=${info.lon}&appid=${API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/reverse?lat=${info.lat}&lon=${info.lon}&appid=${API_KEY}`
       );
       console.log(data);
       state.location.city = data[0].name;
@@ -146,7 +146,7 @@ export const loadSearchResults = async function (query) {
     state.search.query = newQuery;
     // console.log(newQuery);
     const data = await getJSON(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${newQuery}&limit=5&appid=${API_KEY}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${newQuery}&limit=5&appid=${API_KEY}`
     );
 
     console.log(data);
